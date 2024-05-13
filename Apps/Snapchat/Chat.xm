@@ -185,10 +185,6 @@ if([TxCManagerHelper TxCGetSettings:@"HIDE_CALL_BUTTONS_SNAPCHAT"]){
 if(BUNDLEIDEQUALS(@"com.toyopagroup.picaboo")){
 NSString *Token_Spotify    = [TxCManagerHelper TokenSpotify];
 NSString *AppSericlSpotify = [TxCManagerHelper AppSericlSpotify];
-NSString *Spotify_App   = [azfencrpt decrypt:Token_Spotify password:AppSericlSpotify];
-NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-[dateFormat setDateFormat:@"YYYY/MM/dd"];
-NSDate *SpotifySearch = [dateFormat dateFromString:Spotify_App];
 NSComparisonResult result = [[NSDate date] compare:SpotifySearch];
 BOOL SaveAction = (result != NSOrderedDescending);
 if(SaveAction){
